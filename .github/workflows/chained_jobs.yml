@@ -4,21 +4,21 @@ on:
 
 jobs:
   job_1:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - run: "echo Job: ${{ github.job }}"
   job_2:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: job_1
     steps:
       - run: "echo Job: ${{ github.job }}"
   job_3:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: job_1
     steps:
       - run: "echo Job: ${{ github.job }}"
   job_4:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: [job_2, job_3]
     steps:
       - run: "echo Job: ${{ github.job }}"
